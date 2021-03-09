@@ -1,6 +1,6 @@
-export { 
-    store, 
-    browserHistory, 
-    Dispatch, 
-    IRootState 
+export {
+	store,
+	browserHistory,
+	TDispatch,
+	TRootState
 } from './store';

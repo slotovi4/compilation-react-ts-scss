@@ -1,23 +1,23 @@
 import React from 'react';
-import { Home } from '../../components';
+import { Home } from 'components';
 import { connect } from 'react-redux';
-import { IRootState, Dispatch } from '../../redux/store';
+import { TRootState, TDispatch } from 'store';
 
-const HomeContainer = ({ textModelText, clearTestMoselState }: IProps) => (
-    <Home
-        text={textModelText}
-        onHeaderClick={clearTestMoselState}
-    />
+const HomeContainer = ({ textModelText, clearTestMoselState }: TProps) => (
+	<Home
+		text={textModelText}
+		onHeaderClick={clearTestMoselState}
+	/>
 );
 
-const mapState = (state: IRootState) => ({
-    textModelText: state.testModel.text,
+const mapState = (state: TRootState) => ({
+	textModelText: state.testModel.text,
 });
 
-const mapDispatch = (dispatch: Dispatch) => ({
-    clearTestMoselState: dispatch.testModel.clearTestMoselState,
+const mapDispatch = (dispatch: TDispatch) => ({
+	clearTestMoselState: dispatch.testModel.clearTestMoselState,
 });
 
 export default connect(mapState, mapDispatch)(HomeContainer);
 
-type IProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
+type TProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;

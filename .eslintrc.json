@@ -29,6 +29,12 @@
 		"@typescript-eslint/no-use-before-define": "off",
 		"@typescript-eslint/explicit-member-accessibility": "error",
 		"@typescript-eslint/no-shadow": "error",
+		"valid-jsdoc": [2, {
+			"requireReturn": false,
+			"requireReturnType": false,
+			"requireParamType": false,
+			"requireParamDescription": true
+		}],
 		"@typescript-eslint/naming-convention": [
 			"error",
 			{

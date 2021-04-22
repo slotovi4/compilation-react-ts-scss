@@ -27,14 +27,17 @@
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-non-null-assertion": "error",
 		"@typescript-eslint/no-use-before-define": "off",
-		"@typescript-eslint/explicit-member-accessibility": "error",
 		"@typescript-eslint/no-shadow": "error",
-		"valid-jsdoc": [2, {
-			"requireReturn": false,
-			"requireReturnType": false,
-			"requireParamType": false,
-			"requireParamDescription": true
-		}],
+		"@typescript-eslint/member-ordering": "error",
+		"@typescript-eslint/explicit-member-accessibility": [
+			"error",
+			{
+				"overrides": {
+					"properties": "off",
+					"parameterProperties": "off"
+				}
+			}
+		],
 		"@typescript-eslint/naming-convention": [
 			"error",
 			{
@@ -109,7 +112,15 @@
 				]
 			}
 		],
-		"prefer-arrow-callback": "error",
+		"valid-jsdoc": [
+			2,
+			{
+				"requireReturn": false,
+				"requireReturnType": false,
+				"requireParamType": false,
+				"requireParamDescription": true
+			}
+		],
 		"prefer-destructuring": [
 			"error",
 			{
@@ -117,12 +128,6 @@
 				"object": true
 			}
 		],
-		"no-unused-expressions": "error",
-		"no-unused-labels": "error",
-		"curly": "error",
-		"no-extra-semi": "error",
-		"object-shorthand": "error",
-		"react/self-closing-comp": "error",
 		"max-lines": [
 			"error",
 			{
@@ -133,7 +138,6 @@
 			"error",
 			3
 		],
-		"no-shadow": "off",
 		"quotes": [
 			"error",
 			"single"
@@ -146,6 +150,16 @@
 			"error",
 			"always"
 		],
+		"no-shadow": "off",
+		"prefer-arrow-callback": "error",
+		"no-unused-expressions": "error",
+		"no-unused-labels": "error",
+		"curly": "error",
+		"no-extra-semi": "error",
+		"@typescript-eslint/no-extra-semi": "off",
+		"object-shorthand": "error",
+		"react/self-closing-comp": "error",
+		"no-param-reassign": "error",
 		"radix": "error",
 		"react/jsx-wrap-multilines": "warn",
 		"react/no-unused-prop-types": "warn",

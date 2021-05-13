@@ -6,7 +6,8 @@
 		"plugin:react-hooks/recommended"
 	],
 	"plugins": [
-		"@typescript-eslint"
+		"@typescript-eslint",
+		"react-memo"
 	],
 	"settings": {
 		"react": {
@@ -150,6 +151,8 @@
 			"error",
 			"always"
 		],
+		"react-memo/require-memo": "error",
+		"react-memo/require-usememo": "error",
 		"no-shadow": "off",
 		"prefer-arrow-callback": "error",
 		"no-unused-expressions": "error",

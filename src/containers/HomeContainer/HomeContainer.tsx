@@ -3,12 +3,14 @@ import { Home } from 'components';
 import { connect } from 'react-redux';
 import { TRootState, TDispatch } from 'store';
 
-const HomeContainer = ({ textModelText, clearTestMoselState }: TProps) => (
+const HomeContainer = React.memo(({ textModelText, clearTestMoselState }: TProps) => (
 	<Home
 		text={textModelText}
 		onHeaderClick={clearTestMoselState}
 	/>
-);
+));
+
+HomeContainer.displayName = 'HomeContainer';
 
 const mapState = (state: TRootState) => ({
 	textModelText: state.testModel.text,

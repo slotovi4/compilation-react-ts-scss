@@ -16,7 +16,7 @@
 	"scripts": {
 		"start": "react-scripts-ts start",
 		"build": "GENERATE_SOURCEMAP=false react-scripts-ts build",
-		"test": "react-scripts-ts test --coverage --env=jsdom",
+		"test": "react-scripts-ts test --no-cache --coverage --env=jsdom",
 		"eject": "react-scripts-ts eject"
 	},
 	"devDependencies": {
@@ -48,13 +48,22 @@
 		}
 	},
 	"jest": {
-		"moduleNameMapper": {
-			"components": "<rootDir>/src/components/",
-			"containers": "<rootDir>/src/containers/"
-		},
 		"coverageReporters": [
-			"text",
-			"html"
+			"html",
+			"text"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 80,
+				"functions": 80,
+				"lines": 80,
+				"statements": -10
+			}
+		},
+		"collectCoverageFrom": [
+			"**/*.{ts,tsx}",
+			"!**/node_modules/**",
+			"!**/*.d.ts"
 		]
 	},
 	"commitlint": {

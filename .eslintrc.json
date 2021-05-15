@@ -151,6 +151,7 @@
 			"error",
 			"always"
 		],
+		"no-multi-spaces": "error",
 		"react-memo/require-memo": "error",
 		"react-memo/require-usememo": "error",
 		"no-shadow": "off",

@@ -1,12 +1,8 @@
 import { History } from 'history';
 import { init, RematchRootState } from '@rematch/core';
-import { testModel } from '../models';
+import { models } from '../models';
 import { createBrowserHistory } from 'history';
 import { connectRouter } from 'connected-react-router';
-
-const models = {
-	testModel,
-};
 
 export const browserHistory: History = createBrowserHistory();
 

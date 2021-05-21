@@ -1,10 +1,11 @@
 import { createModel } from '@rematch/core';
+import { IRootModel } from './index';
 
 const initialState: IState = {
 	text: 'Test value'
 };
 
-const testModel = createModel({
+export const testModel = createModel<IRootModel>()({
 	state: initialState,
 	reducers: {
 		clearState() {
@@ -13,12 +14,10 @@ const testModel = createModel({
 	},
 	effects: dispatch => ({
 		async clearTestMoselState() {
-			this.clearState();
+			dispatch.testModel.clearState();
 		},
 	}),
 });
-
-export default testModel;
 
 interface IState {
 	text: string;

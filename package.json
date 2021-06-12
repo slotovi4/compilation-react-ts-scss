@@ -1,6 +1,6 @@
 {
 	"name": "compilation-react-ts-scss",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
 		"@rematch/core": "^2.0.1",
@@ -10,14 +10,14 @@
 		"react-redux": "^7.2.4",
 		"react-router": "^5.2.0",
 		"react-router-dom": "^5.2.0",
-		"react-scripts-scss-ts": "^2.17.1",
+		"react-scripts": "^4.0.3",
 		"redux": "^4.1.0"
 	},
 	"scripts": {
-		"start": "react-scripts-ts start",
-		"build": "GENERATE_SOURCEMAP=false react-scripts-ts build",
-		"test": "react-scripts-ts test --no-cache --coverage --env=jsdom",
-		"eject": "react-scripts-ts eject"
+		"start": "react-scripts start",
+		"build": "GENERATE_SOURCEMAP=false react-scripts build",
+		"test": "react-scripts test --no-cache --coverage",
+		"eject": "react-scripts eject"
 	},
 	"devDependencies": {
 		"@bem-react/classname": "^1.5.10",
@@ -39,6 +39,7 @@
 		"eslint-plugin-react-memo": "^0.0.3",
 		"husky": "4.3.8",
 		"lint-staged": "^11.0.0",
+		"sass": "^1.34.1",
 		"typescript": "^4.2.4",
 		"yarn-upgrade-all": "^0.5.4"
 	},
@@ -83,6 +84,18 @@
 	"yarn-upgrade-all": {
 		"ignore": [
 			"husky"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
 		]
 	}
 }

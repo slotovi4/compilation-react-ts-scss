@@ -1,7 +1,7 @@
 import React from 'react';
-import { Home } from 'components';
+import { Home } from 'src/components';
 import { connect } from 'react-redux';
-import { TRootState, TDispatch } from 'store';
+import { TRootState, TDispatch } from 'src/redux/store';
 
 const HomeContainer = React.memo(({ textModelText, clearTestMoselState }: TProps) => (
 	<Home

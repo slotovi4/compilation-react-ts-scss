@@ -1,6 +1,2 @@
-export {
-	store,
-	browserHistory,
-	TDispatch,
-	TRootState
-} from './store';
+export { store, browserHistory } from './store';
+export type { TDispatch, TRootState } from './store';

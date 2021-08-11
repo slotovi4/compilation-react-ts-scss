@@ -1,5 +1,6 @@
-import { Models } from '@rematch/core';
 import { testModel } from './testModel';
+
+import { Models } from '@rematch/core';
 
 export interface IRootModel extends Models<IRootModel> {
 	testModel: typeof testModel;

@@ -1,6 +1,7 @@
+import logo from './logo.svg';
+
 import React from 'react';
 import { cn } from '@bem-react/classname';
-import logo from './logo.svg';
 import './Home.scss';
 
 const Home = React.memo(({ text, onHeaderClick }: IProps) => {

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo.icon.svg';
 
 import { cn } from '@bem-react/classname';
 import './Home.scss';

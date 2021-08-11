@@ -1,6 +1,6 @@
-import { IRootModel } from './index';
-
 import { createModel } from '@rematch/core';
+
+import type { IRootModel } from './index';
 
 const initialState: IState = {
 	text: 'Test value'

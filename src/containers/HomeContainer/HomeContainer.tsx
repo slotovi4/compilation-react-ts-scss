@@ -1,7 +1,8 @@
 
 import { Home } from 'src/components';
 import { connect } from 'react-redux';
-import { TRootState, TDispatch } from 'src/redux/store';
+
+import type { TRootState, TDispatch } from 'src/redux/store';
 
 const HomeContainer = ({ textModelText, clearTestMoselState }: TProps) => (
 	<Home

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Home } from 'src/components';
 import { connect } from 'react-redux';
 import { TRootState, TDispatch } from 'src/redux/store';

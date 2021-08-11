@@ -35,6 +35,7 @@
 				"when": "multiline"
 			}
 		],
-		"react/no-unused-prop-types": "warn"
+		"react/no-unused-prop-types": "warn",
+		"react/react-in-jsx-scope": "off"
 	}
 }

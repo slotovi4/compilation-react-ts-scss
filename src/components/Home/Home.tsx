@@ -4,7 +4,7 @@ import React from 'react';
 import { cn } from '@bem-react/classname';
 import './Home.scss';
 
-const Home = React.memo(({ text, onHeaderClick }: IProps) => {
+const Home = ({ text, onHeaderClick }: IProps) => {
 	const home = cn('Home');
 
 	return (
@@ -18,11 +18,9 @@ const Home = React.memo(({ text, onHeaderClick }: IProps) => {
 			</p>
 		</section>
 	);
-});
+};
 
-Home.displayName = 'Home';
-
-export default React.memo(Home);
+export default Home;
 
 interface IProps {
 	text?: string;

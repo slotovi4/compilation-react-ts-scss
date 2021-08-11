@@ -5,8 +5,7 @@
 		"plugin:react-hooks/recommended"
 	],
 	"plugins": [
-		"@typescript-eslint",
-		"react-memo"
+		"@typescript-eslint"
 	],
 	"settings": {
 		"react": {
@@ -19,16 +18,23 @@
 		}
 	},
 	"rules": {
-		"react-memo/require-memo": "error",
-		"react-memo/require-usememo": "error",
 		"react/self-closing-comp": "error",
 		"react/jsx-wrap-multilines": "warn",
-		"react/jsx-indent": ["error", "tab"],
-		"react/jsx-indent-props": ["error", "tab"],
-		"react/jsx-max-props-per-line": ["error", {
-			"maximum": 1,
-			"when": "multiline"
-		}],
+		"react/jsx-indent": [
+			"error",
+			"tab"
+		],
+		"react/jsx-indent-props": [
+			"error",
+			"tab"
+		],
+		"react/jsx-max-props-per-line": [
+			"error",
+			{
+				"maximum": 1,
+				"when": "multiline"
+			}
+		],
 		"react/no-unused-prop-types": "warn"
 	}
 }

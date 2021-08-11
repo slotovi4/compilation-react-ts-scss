@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { HomeContainer } from 'src/containers';
 import { store, browserHistory } from 'src/redux/store';
 
-const App = React.memo(() => (
+const App = () => (
 	<Provider store={store}>
 		<ConnectedRouter history={browserHistory}>
 			<Switch>
@@ -13,8 +13,6 @@ const App = React.memo(() => (
 			</Switch>
 		</ConnectedRouter>
 	</Provider>
-));
-
-App.displayName = 'App';
+);
 
 export default App;

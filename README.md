@@ -4,7 +4,7 @@
 
 ### SCSS types checking
 Set in VSCode config settings - `"typescript.tsdk": "./node_modules/typescript/lib"` </br>
-[more details](https://www.npmjs.com/package/typescript-plugin-css-moduless)
+[more details](https://www.npmjs.com/package/typescript-plugin-css-modules)
 
 #### On husky crashes:
 1. delete yarn.lock

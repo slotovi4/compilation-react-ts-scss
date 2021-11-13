@@ -18,8 +18,10 @@
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "GENERATE_SOURCEMAP=false react-scripts build",
-		"test": "react-scripts test --no-cache --coverage",
-		"eject": "react-scripts eject"
+		"test": "react-scripts test --no-cache --coverage --watchAll=false",
+		"eject": "react-scripts eject",
+		"test-ci": "yarn test --ci",
+		"lint-ci": "eslint ."
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^13.1.0",

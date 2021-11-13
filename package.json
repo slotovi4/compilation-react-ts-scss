@@ -3,7 +3,6 @@
 	"version": "1.1.1",
 	"private": true,
 	"dependencies": {
-		"@bem-react/classname": "^1.5.12",
 		"@rematch/core": "^2.2.0",
 		"connected-react-router": "^6.9.1",
 		"history": "^5.1.0",
@@ -39,6 +38,7 @@
 		"lint-staged": "^11.2.6",
 		"sass": "^1.43.4",
 		"typescript": "^4.4.4",
+		"typescript-plugin-css-modules": "^3.4.0",
 		"yarn-upgrade-all": "^0.5.4"
 	},
 	"husky": {

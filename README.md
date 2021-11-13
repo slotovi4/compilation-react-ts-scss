@@ -1,13 +1,14 @@
-### TS(react-scripts-ts), rematch, router, bem-react/classname, sass
-</br>
-
-Запуск </br>
+### Start
 `yarn` </br>
 `yarn start`</br>
 
-#### При сбоях husky:
-1. удалить yarn.lock
-2. удалить node_modules
-3. удалить гит хуки: `rm -rf .git/hooks`
-4. установить husky: `yarn add -D husky@4.3.8`
+### SCSS types checking
+Set in VSCode config settings - `"typescript.tsdk": "./node_modules/typescript/lib"` </br>
+[more details](https://www.npmjs.com/package/typescript-plugin-css-moduless)
+
+#### On husky crashes:
+1. delete yarn.lock
+2. delete node_modules
+3. delete git hooks: `rm -rf .git/hooks`
+4. install husky: `yarn add -D husky@4.3.8`
 

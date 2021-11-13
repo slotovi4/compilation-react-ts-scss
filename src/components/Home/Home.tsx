@@ -1,6 +1,5 @@
-import logo from './logo.icon.svg';
-
 import { cn } from '@bem-react/classname';
+import { Logo } from 'src/shared';
 import './Home.scss';
 
 const Home = ({ title, onHeaderClick }: IProps) => {
@@ -12,11 +11,7 @@ const Home = ({ title, onHeaderClick }: IProps) => {
 				className={home('Header')}
 				onClick={onHeaderClick}
 			>
-				<img
-					src={logo}
-					className={home('Logo')}
-					alt="logo"
-				/>
+				<Logo className={home('Logo')} />
 
 				<h1 className={home('Title')}>
 					{title || 'Welcome to React'}

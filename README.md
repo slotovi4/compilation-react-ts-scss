@@ -12,3 +12,8 @@ Set in VSCode config settings - `"typescript.tsdk": "./node_modules/typescript/l
 3. delete git hooks: `rm -rf .git/hooks`
 4. install husky: `yarn add -D husky@4.3.8`
 
+### Components architecture
+![components-architecture](https://github.com/slotovi4/compilation-react-ts-scss-assets/blob/master/assets/images/conponents-architecture.png?raw=true)
+
+### API architecture
+![api-architecture](https://github.com/slotovi4/compilation-react-ts-scss-assets/blob/master/assets/images/api-architecture.png?raw=true)

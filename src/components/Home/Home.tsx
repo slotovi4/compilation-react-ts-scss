@@ -8,7 +8,10 @@ const Home = ({ title, onHeaderClick }: IProps) => {
 
 	return (
 		<section className={home()}>
-			<header className={home('Header')} onClick={onHeaderClick}>
+			<header
+				className={home('Header')}
+				onClick={onHeaderClick}
+			>
 				<img
 					src={logo}
 					className={home('Logo')}

@@ -17,7 +17,6 @@ export const store = init({
 		reducers: {
 			router: connectRouter(browserHistory),
 		},
-		middlewares: [],
 	},
 });
 

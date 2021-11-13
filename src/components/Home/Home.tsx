@@ -1,24 +1,22 @@
-import { cn } from '@bem-react/classname';
+import styles from './Home.module.scss';
+
 import { Logo } from 'src/shared';
-import './Home.scss';
 
 const Home = ({ title, onHeaderClick }: IProps) => {
-	const home = cn('Home');
-
 	return (
-		<section className={home()}>
+		<section className={styles.Home}>
 			<header
-				className={home('Header')}
+				className={styles['Home-Header']}
 				onClick={onHeaderClick}
 			>
-				<Logo className={home('Logo')} />
+				<Logo className={styles['Home-Logo']} />
 
-				<h1 className={home('Title')}>
+				<h1 className={styles['Home-Title']}>
 					{title || 'Welcome to React'}
 				</h1>
 			</header>
 
-			<p className={home('Intro')}>
+			<p className={styles['Home-Title']}>
 				Intro
 			</p>
 		</section>

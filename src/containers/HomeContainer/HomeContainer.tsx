@@ -1,18 +1,34 @@
-
 import { Home } from 'src/components';
 import { connect } from 'react-redux';
 
 import type { TRootState, TDispatch } from 'src/redux/store';
 
-const HomeContainer = ({ textModelText, clearTestMoselState }: TProps) => (
-	<Home
-		text={textModelText}
-		onHeaderClick={clearTestMoselState}
-	/>
-);
+interface IProps extends TReduxProps {
+	redirectToHome: () => void;
+	id?: string;
+}
+
+const HomeContainer = ({
+	title,
+	redirectToHome,
+	clearTestMoselState,
+	id
+}: IProps) => {
+	const onHeaderClick = () => {
+		clearTestMoselState();
+		redirectToHome();
+	};
+
+	return (
+		<Home
+			title={id || title}
+			onHeaderClick={onHeaderClick}
+		/>
+	);
+};
 
 const mapState = (state: TRootState) => ({
-	textModelText: state.testModel.text,
+	title: state.testModel.text,
 });
 
 const mapDispatch = (dispatch: TDispatch) => ({
@@ -21,4 +37,4 @@ const mapDispatch = (dispatch: TDispatch) => ({
 
 export default connect(mapState, mapDispatch)(HomeContainer);
 
-type TProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
+type TReduxProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;

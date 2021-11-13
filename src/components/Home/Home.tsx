@@ -1,19 +1,23 @@
-import logo from './logo.icon.svg';
+import styles from './Home.module.scss';
 
-import { cn } from '@bem-react/classname';
-import './Home.scss';
+import { Logo } from 'src/shared';
 
-const Home = ({ text, onHeaderClick }: IProps) => {
-	const home = cn('Home');
-
+const Home = ({ title, onHeaderClick }: IProps) => {
 	return (
-		<section className={home()}>
-			<header className={home('Header')} onClick={onHeaderClick}>
-				<img src={logo} className={home('Logo')} alt="logo" />
-				<h1 className={home('Title')}>{text || 'Welcome to React'}</h1>
+		<section className={styles.Home}>
+			<header
+				className={styles['Home-Header']}
+				onClick={onHeaderClick}
+			>
+				<Logo className={styles['Home-Logo']} />
+
+				<h1 className={styles['Home-Title']}>
+					{title || 'Welcome to React'}
+				</h1>
 			</header>
-			<p className={home('Intro')}>
-				To get started, edit <code>src/App.tsx</code> and save to reload.
+
+			<p className={styles['Home-Title']}>
+				Intro
 			</p>
 		</section>
 	);
@@ -22,6 +26,6 @@ const Home = ({ text, onHeaderClick }: IProps) => {
 export default Home;
 
 interface IProps {
-	text?: string;
+	title?: string;
 	onHeaderClick?: () => void;
 }

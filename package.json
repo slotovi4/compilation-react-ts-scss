@@ -20,7 +20,7 @@
 		"build": "GENERATE_SOURCEMAP=false react-scripts build",
 		"test": "react-scripts test --no-cache --coverage --watchAll=false",
 		"eject": "react-scripts eject",
-		"test-ci": "yarn test --ci",
+		"test-ci": "react-scripts test --no-cache --watchAll=false --ci",
 		"lint-ci": "eslint ."
 	},
 	"devDependencies": {

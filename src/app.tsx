@@ -6,15 +6,15 @@ import { store, browserHistory } from 'src/redux/store';
 import { StrictMode } from 'react';
 
 const App = () => (
-	<Provider store={store}>
-		<ConnectedRouter history={browserHistory}>
-			<Switch>
-				<StrictMode>
+	<StrictMode>
+		<Provider store={store}>
+			<ConnectedRouter history={browserHistory}>
+				<Switch>
 					<Route path="/" component={HomeContainer} />
-				</StrictMode>
-			</Switch>
-		</ConnectedRouter>
-	</Provider>
+				</Switch>
+			</ConnectedRouter>
+		</Provider>
+	</StrictMode>
 );
 
 export default App;

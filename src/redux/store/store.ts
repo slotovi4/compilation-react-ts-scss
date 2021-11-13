@@ -1,8 +1,6 @@
 import { models } from '../models';
 
-import { createBrowserHistory } from 'history';
 import { init } from '@rematch/core';
-import { connectRouter } from 'connected-react-router';
 
 import type { RematchRootState } from '@rematch/core';
 
@@ -11,9 +9,6 @@ export const store = init({
 	plugins: [],
 	redux: {
 		initialState: {},
-		reducers: {
-			router: connectRouter(createBrowserHistory()),
-		},
 	},
 });
 

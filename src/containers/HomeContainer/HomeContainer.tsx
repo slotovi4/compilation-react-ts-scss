@@ -1,22 +1,21 @@
-
 import { Home } from 'src/components';
 import { connect } from 'react-redux';
 
 import type { TRootState, TDispatch } from 'src/redux/store';
 
-const HomeContainer = ({ textModelText, clearTestMoselState }: TProps) => (
+const HomeContainer = ({ title, onHeaderClick }: TProps) => (
 	<Home
-		text={textModelText}
-		onHeaderClick={clearTestMoselState}
+		title={title}
+		onHeaderClick={onHeaderClick}
 	/>
 );
 
 const mapState = (state: TRootState) => ({
-	textModelText: state.testModel.text,
+	title: state.testModel.text,
 });
 
 const mapDispatch = (dispatch: TDispatch) => ({
-	clearTestMoselState: dispatch.testModel.clearTestMoselState,
+	onHeaderClick: dispatch.testModel.clearTestMoselState,
 });
 
 export default connect(mapState, mapDispatch)(HomeContainer);

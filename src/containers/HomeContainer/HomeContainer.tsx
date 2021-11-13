@@ -3,9 +3,13 @@ import { connect } from 'react-redux';
 
 import type { TRootState, TDispatch } from 'src/redux/store';
 
-const HomeContainer = ({ title, onHeaderClick }: TProps) => (
+interface IProps extends TReduxProps {
+	id?: string;
+}
+
+const HomeContainer = ({ title, onHeaderClick, id }: IProps) => (
 	<Home
-		title={title}
+		title={id || title}
 		onHeaderClick={onHeaderClick}
 	/>
 );
@@ -20,4 +24,4 @@ const mapDispatch = (dispatch: TDispatch) => ({
 
 export default connect(mapState, mapDispatch)(HomeContainer);
 
-type TProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
+type TReduxProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;

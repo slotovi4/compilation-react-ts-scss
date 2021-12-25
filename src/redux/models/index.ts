@@ -1,11 +1,11 @@
-import { testModel } from './testModel';
+import { test } from './test.model';
 
 import type { Models } from '@rematch/core';
 
 export interface IRootModel extends Models<IRootModel> {
-	testModel: typeof testModel;
+	test: typeof test;
 }
 
 export const models: IRootModel = {
-	testModel
+	test
 };

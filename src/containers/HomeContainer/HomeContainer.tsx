@@ -1,38 +1,48 @@
 import { Home } from 'src/components';
 import { connect } from 'react-redux';
+import { useEffect } from 'react';
 
 import type { TRootState, TDispatch } from 'src/redux/store';
 
 interface IProps extends TReduxProps {
-	redirectToHome: () => void;
 	id?: string;
+	redirectToHome: () => void;
 }
 
 const HomeContainer = ({
 	title,
 	redirectToHome,
-	clearTestMoselState,
+	updateThemeAsync,
+	theme,
 	id
 }: IProps) => {
-	const onHeaderClick = () => {
-		clearTestMoselState();
-		redirectToHome();
+	useEffect(() => {
+		if (theme) {
+			document.body.setAttribute('data-theme', theme);
+		}
+	}, [theme]);
+
+	const onThemeSwitchChange = () => {
+		updateThemeAsync(theme === 'dark' ? 'light' : 'dark');
 	};
 
 	return (
 		<Home
+			theme={theme}
 			title={id || title}
-			onHeaderClick={onHeaderClick}
+			onHeaderClick={redirectToHome}
+			onThemeSwitchChange={onThemeSwitchChange}
 		/>
 	);
 };
 
 const mapState = (state: TRootState) => ({
-	title: state.testModel.text,
+	title: state.test.text,
+	theme: state.test.theme
 });
 
 const mapDispatch = (dispatch: TDispatch) => ({
-	clearTestMoselState: dispatch.testModel.clearTestMoselState,
+	updateThemeAsync: dispatch.test.updateThemeAsync
 });
 
 export default connect(mapState, mapDispatch)(HomeContainer);

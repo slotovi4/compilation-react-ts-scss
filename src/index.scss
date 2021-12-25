@@ -1,6 +1,22 @@
 @import "~normalize.css/normalize";
 
+:root {
+	--primary-color: #61dafb;
+	--dark-color: #222222;
+	--light-color: #eeeeee;
+	--theme-color: var(--light-color);
+}
+
 body {
 	padding: 0;
 	font-family: sans-serif;
+	background-color: var(--theme-color);
+
+	&[data-theme="light"] {
+		--theme-color: var(--light-color);
+	}
+
+	&[data-theme="dark"] {
+		--theme-color: var(--dark-color);
+	}
 }

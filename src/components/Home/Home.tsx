@@ -1,10 +1,31 @@
 import styles from './Home.module.scss';
 
-import { Logo } from 'src/shared';
+import { Logo, Switch } from 'src/shared';
 
-const Home = ({ title, onHeaderClick }: IProps) => {
+interface IProps {
+	theme: TTheme | null;
+	title?: string;
+	onHeaderClick?: () => void;
+	onThemeSwitchChange?: () => void;
+}
+
+const Home = ({
+	theme,
+	title,
+	onHeaderClick,
+	onThemeSwitchChange
+}: IProps) => {
 	return (
 		<section className={styles.Home}>
+			{onThemeSwitchChange && (
+				<Switch
+					className={styles['Home-ThemeSwitch']}
+					onChange={onThemeSwitchChange}
+					name='themeSwitch'
+					checked={theme === 'dark'}
+				/>
+			)}
+
 			<header
 				className={styles['Home-Header']}
 				onClick={onHeaderClick}
@@ -15,17 +36,10 @@ const Home = ({ title, onHeaderClick }: IProps) => {
 					{title || 'Welcome to React'}
 				</h1>
 			</header>
-
-			<p className={styles['Home-Title']}>
-				Intro
-			</p>
 		</section>
 	);
 };
 
 export default Home;
 
-interface IProps {
-	title?: string;
-	onHeaderClick?: () => void;
-}
+type TTheme = 'dark' | 'light';

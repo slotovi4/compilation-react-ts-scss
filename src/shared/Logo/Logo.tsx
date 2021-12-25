@@ -5,8 +5,10 @@ import type { ImgHTMLAttributes } from 'react';
 export const Logo = (props: TProps) => {
 	return (
 		<img
-			src={logo}
 			alt="logo"
+			src={logo}
+			height={80}
+			width={80}
 			{...props}
 		/>
 	);

@@ -6,6 +6,6 @@ describe('Test Home component', () => {
 	it('Renders without crashing', () => {
 		const app = document.createElement('div');
 
-		render(<Home />, app);
+		render(<Home theme={null} />, app);
 	});
 });

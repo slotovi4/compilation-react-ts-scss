@@ -14,9 +14,6 @@ const initialState: IState = {
 export const test = createModel<IRootModel>()({
 	state: initialState,
 	reducers: {
-		clearState() {
-			return initialState;
-		},
 		updateTheme(state, theme: IState['theme']) {
 			return {
 				...state,

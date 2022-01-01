@@ -8,7 +8,7 @@ class TestController extends Controller {
 	}
 
 	public async testRequest() {
-		return this.post<null>('/testRequest');
+		return this.post<null>('/login');
 	}
 }
 

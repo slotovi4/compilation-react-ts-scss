@@ -30,7 +30,7 @@ const HomeContainer = ({
 		<Home
 			theme={theme}
 			title={id || title}
-			onHeaderClick={redirectToHome}
+			onLogoClick={redirectToHome}
 			onThemeSwitchChange={onThemeSwitchChange}
 		/>
 	);

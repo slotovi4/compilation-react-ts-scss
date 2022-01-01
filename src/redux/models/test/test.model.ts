@@ -1,8 +1,9 @@
-import { themeStorage } from '../localStorage';
+import { themeStorage } from '../../localStorage';
 
 import { createModel } from '@rematch/core';
+import { TestAPI } from 'src/api';
 
-import type { IRootModel } from './index';
+import type { IRootModel } from '../index';
 
 const savedTheme = themeStorage.getItem() as IState['theme'] | null;
 
@@ -28,6 +29,8 @@ export const test = createModel<IRootModel>()({
 			if (theme) {
 				themeStorage.setItem(theme);
 			}
+
+			await TestAPI.testRequest();
 		}
 	}),
 });

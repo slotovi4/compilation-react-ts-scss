@@ -5,14 +5,14 @@ import { Logo, Switch } from 'src/shared';
 interface IProps {
 	theme: TTheme | null;
 	title?: string;
-	onHeaderClick?: () => void;
+	onLogoClick?: () => void;
 	onThemeSwitchChange?: () => void;
 }
 
 const Home = ({
 	theme,
 	title,
-	onHeaderClick,
+	onLogoClick,
 	onThemeSwitchChange
 }: IProps) => {
 	return (
@@ -21,16 +21,17 @@ const Home = ({
 				<Switch
 					className={styles['Home-ThemeSwitch']}
 					onChange={onThemeSwitchChange}
-					name='themeSwitch'
 					checked={theme === 'dark'}
+					name='themeSwitch'
 				/>
 			)}
 
-			<header
-				className={styles['Home-Header']}
-				onClick={onHeaderClick}
-			>
-				<Logo className={styles['Home-Logo']} />
+			<header className={styles['Home-Header']}>
+				<Logo
+					className={styles['Home-Logo']}
+					onClick={onLogoClick}
+					title='redirect to home'
+				/>
 
 				<h1 className={styles['Home-Title']}>
 					{title || 'Welcome to React'}

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { AxiosRequestConfig } from 'axios';
 
-export const formatRequestConfig = (config: IRequestConfig | undefined) => {
+export const formatRequestConfig = (config?: IRequestConfig) => {
 	if (!config) {
 		return undefined;
 	}

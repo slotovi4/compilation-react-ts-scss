@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 /**
  * Hypertext Transfer Protocol (HTTP) response status codes.

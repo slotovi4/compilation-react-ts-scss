@@ -13,4 +13,5 @@ export const store = init({
 });
 
 export type TDispatch = typeof store.dispatch;
+
 export type TRootState = RematchRootState<typeof models>;

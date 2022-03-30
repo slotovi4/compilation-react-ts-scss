@@ -2,19 +2,26 @@ import './index.scss';
 import registerServiceWorker from './registerServiceWorker';
 import { AppRoutes } from './AppRoutes';
 
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { store } from 'src/redux/store';
-import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
+import { StrictMode, Suspense } from 'react';
 
 const App = () => (
 	<StrictMode>
-		<Provider store={store}>
-			<AppRoutes />
-		</Provider>
+		<RecoilRoot>
+			<Suspense fallback={<div>Loading...</div>}>
+				<AppRoutes />
+			</Suspense>
+		</RecoilRoot>
 	</StrictMode>
 );
 
-render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
 
-registerServiceWorker();
+if (container) {
+	const root = createRoot(container);
+
+	root.render(<App />);
+
+	registerServiceWorker();
+}

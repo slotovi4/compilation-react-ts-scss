@@ -5,26 +5,26 @@ import { Logo, Switch } from 'src/shared';
 interface IProps {
 	theme: TTheme | null;
 	title?: string;
-	onLogoClick?: () => void;
-	onThemeSwitchChange?: () => void;
+	onLogoClick: () => void;
+	onThemeSwitchChange: () => void;
+	sendTestRequest: () => void;
 }
 
 const Home = ({
 	theme,
 	title,
 	onLogoClick,
-	onThemeSwitchChange
+	onThemeSwitchChange,
+	sendTestRequest
 }: IProps) => {
 	return (
 		<section className={styles.Home}>
-			{onThemeSwitchChange && (
-				<Switch
-					className={styles['Home-ThemeSwitch']}
-					onChange={onThemeSwitchChange}
-					checked={theme === 'dark'}
-					name='themeSwitch'
-				/>
-			)}
+			<Switch
+				className={styles['Home-ThemeSwitch']}
+				onChange={onThemeSwitchChange}
+				checked={theme === 'dark'}
+				name='themeSwitch'
+			/>
 
 			<header className={styles['Home-Header']}>
 				<Logo
@@ -37,6 +37,13 @@ const Home = ({
 					{title || 'Welcome to React'}
 				</h1>
 			</header>
+
+			<button
+				className={styles['Home-RequestButton']}
+				onClick={sendTestRequest}
+			>
+				Send test request
+			</button>
 		</section>
 	);
 };

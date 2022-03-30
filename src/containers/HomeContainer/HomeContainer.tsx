@@ -1,50 +1,41 @@
 import { Home } from 'src/components';
-import { connect } from 'react-redux';
 import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { themeState } from 'src/state';
+import { TestAPI } from 'src/api';
 
-import type { TRootState, TDispatch } from 'src/redux/store';
-
-interface IProps extends TReduxProps {
+interface IProps {
 	id?: string;
 	redirectToHome: () => void;
 }
 
-const HomeContainer = ({
-	title,
+export const HomeContainer = ({
 	redirectToHome,
-	updateThemeAsync,
-	theme,
 	id
 }: IProps) => {
+	const [currentTheme, setCurrentTheme] = useRecoilState(themeState);
+
 	useEffect(() => {
-		if (theme) {
-			document.body.setAttribute('data-theme', theme);
+		if (currentTheme) {
+			document.body.setAttribute('data-theme', currentTheme);
 		}
-	}, [theme]);
+	}, [currentTheme]);
 
 	const onThemeSwitchChange = () => {
-		updateThemeAsync(theme === 'dark' ? 'light' : 'dark');
+		setCurrentTheme(oldTheme => oldTheme === 'dark' ? 'light' : 'dark');
+	};
+
+	const sendTestRequest = async () => {
+		await TestAPI.testRequest();
 	};
 
 	return (
 		<Home
-			theme={theme}
-			title={id || title}
+			theme={currentTheme}
+			title={id}
 			onLogoClick={redirectToHome}
 			onThemeSwitchChange={onThemeSwitchChange}
+			sendTestRequest={sendTestRequest}
 		/>
 	);
 };
-
-const mapState = (state: TRootState) => ({
-	title: state.test.text,
-	theme: state.test.theme
-});
-
-const mapDispatch = (dispatch: TDispatch) => ({
-	updateThemeAsync: dispatch.test.updateThemeAsync
-});
-
-export default connect(mapState, mapDispatch)(HomeContainer);
-
-type TReduxProps = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;

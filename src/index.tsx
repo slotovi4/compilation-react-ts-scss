@@ -3,15 +3,16 @@ import registerServiceWorker from './registerServiceWorker';
 import { AppRoutes } from './AppRoutes';
 
 import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from 'src/redux/store';
-import { StrictMode } from 'react';
+import { RecoilRoot } from 'recoil';
+import { StrictMode, Suspense } from 'react';
 
 const App = () => (
 	<StrictMode>
-		<Provider store={store}>
-			<AppRoutes />
-		</Provider>
+		<RecoilRoot>
+			<Suspense fallback={<div>Loading...</div>}>
+				<AppRoutes />
+			</Suspense>
+		</RecoilRoot>
 	</StrictMode>
 );
 
